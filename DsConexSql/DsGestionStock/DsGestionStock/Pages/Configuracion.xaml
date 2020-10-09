@@ -26,6 +26,11 @@
                 TextColor="{StaticResource FontColor}"
                 Placeholder="Ingrese Nombre del Catalogo">
             </Entry>
+            <Label
+                FontAttributes="Bold"
+                TextColor="{StaticResource FontColor}"
+                Text="C.Vendedor :">
+            </Label>
             <Entry
                 x:Name="txtVendedor"
                 TextColor="{StaticResource FontColor}"
