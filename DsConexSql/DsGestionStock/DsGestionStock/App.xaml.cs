@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DsGestionStock.Pages;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -6,11 +7,13 @@ namespace DsGestionStock
 {
     public partial class App : Application
     {
+        public static MainPage MasterDetail { get; internal set; }
+
         public App()
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new DsGestionStock.Pages.MainPage();
         }
 
         protected override void OnStart()

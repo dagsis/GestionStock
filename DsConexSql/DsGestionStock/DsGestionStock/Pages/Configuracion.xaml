@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DsGestionStock.Pages.Configuracion"
+             BackgroundColor="{StaticResource BackgroundColor}"
+             Title="Configuración">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label
+                FontAttributes="Bold"
+                TextColor="{StaticResource FontColor}"
+                Text="Servidor :">
+            </Label>
+            <Entry
+                x:Name="txtServidor"               
+                TextColor="{StaticResource FontColor}"
+                Placeholder="Ingrese Ip Servidor">
+            </Entry>
+            <Label
+                FontAttributes="Bold"
+                TextColor="{StaticResource FontColor}"
+                Text="Base de Datos :">
+            </Label>
+            <Entry
+                x:Name="txtCatalogo"
+                TextColor="{StaticResource FontColor}"
+                Placeholder="Ingrese Nombre del Catalogo">
+            </Entry>
+            <Button
+                x:Name="btnGuardar"
+                Margin="0,20"
+                Text="Guardar"
+                TextColor="{StaticResource FontColor}"
+                BackgroundColor="{StaticResource AccentColor2}">
+            </Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

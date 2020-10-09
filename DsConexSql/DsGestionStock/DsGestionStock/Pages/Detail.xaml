@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DsGestionStock.Pages.Detail"
+              BackgroundColor="{StaticResource BackgroundColor}"             
+             Title="Productos">
+    <ContentPage.Content>
+        <StackLayout>
+            <ScrollView>
+                <StackLayout Padding="5">
+                    <Button
+                Text="Scanear Código"
+                x:Name="btnConectar">
+                    </Button>
+                    <StackLayout Orientation="Horizontal">
+                        <Entry HorizontalOptions="FillAndExpand" x:Name="txtBarCode" Placeholder="Producto"></Entry>
+                        <Button Text="Consultar" x:Name="btnConsultar"></Button>
+                        <Button Text="Limpiar" x:Name="btnLimpiar"></Button>
+                    </StackLayout>
+                    <StackLayout>
+                        <Grid Margin="5,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Entry Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" x:Name="txtDescripcion" Placeholder="Descripcion"></Entry>
+                        </Grid>
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
