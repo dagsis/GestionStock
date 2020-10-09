@@ -13,7 +13,7 @@
                 x:Name="btnConectar">
                     </Button>
                     <StackLayout Orientation="Horizontal">
-                        <Entry HorizontalOptions="FillAndExpand" x:Name="txtBarCode" Placeholder="Producto"></Entry>
+                        <Entry HorizontalOptions="FillAndExpand" x:Name="txtBarCode" Placeholder="Producto" Keyboard="Numeric"></Entry>
                         <Button Text="Consultar" x:Name="btnConsultar"></Button>
                         <Button Text="Limpiar" x:Name="btnLimpiar"></Button>
                     </StackLayout>
@@ -24,8 +24,12 @@
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
                             <Entry Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" x:Name="txtDescripcion" Placeholder="Descripcion"></Entry>
+                            <Entry Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" x:Name="txtCantidad" Placeholder="Cantidad" Keyboard="Numeric"></Entry>
                         </Grid>
-                    </StackLayout>
+                            <Button Text="Aplicar"
+                                    x:Name="btnAplicar">
+                            </Button>
+                        </StackLayout>
                 </StackLayout>
             </ScrollView>
         </StackLayout>

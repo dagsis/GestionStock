@@ -21,6 +21,36 @@ namespace DsGestionStock.Pages
             btnConectar.Clicked += BtnConectar_Clicked;
             btnConsultar.Clicked += BtnConsultar_Clicked;
             btnLimpiar.Clicked += BtnLimpiar_Clicked;
+            btnAplicar.Clicked += BtnAplicar_Clicked;
+        }
+
+        private void BtnAplicar_Clicked(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtCantidad.Text))
+            {
+                string sServidor = Application.Current.Properties["Servidor"] as string;
+                string sBase = Application.Current.Properties["Catalogo"] as string;
+                string nVendedor = Application.Current.Properties["Vendedor"] as string;
+
+                List<Producto> producto = DsConexSql.ConexSql.GrabarProducto(sServidor, sBase, txtBarCode.Text,txtDescripcion.Text,nVendedor, Convert.ToDecimal(txtCantidad.Text));
+
+                if (producto.Count != 0)
+                {
+                    DisplayAlert("Atención", "Producto Grabado Con Exito", "Aceptar");
+                    Limpiar();
+                    txtBarCode.Text = "";
+                    txtBarCode.Focus();
+                }
+                else
+                {
+
+                }
+              
+            } else
+            {
+                DisplayAlert("Atención", "Cantidad no puede estar Vacio", "Aceptar");
+                txtCantidad.Focus();
+            }
         }
 
         private void BtnLimpiar_Clicked(object sender, EventArgs e)
@@ -33,6 +63,7 @@ namespace DsGestionStock.Pages
         private void Limpiar()
         {
             txtDescripcion.Text = "";
+            txtCantidad.Text = "";
         }
 
         private void Consultar(string pCodigo)
@@ -55,6 +86,7 @@ namespace DsGestionStock.Pages
                         txtBarCode.Text = item.Codigo;
                         txtDescripcion.Text = item.Descripcion;
                     }
+                    txtCantidad.Focus();
                 }
                 else
                 {
@@ -87,9 +119,9 @@ namespace DsGestionStock.Pages
                 Application.Current.Properties["Catalogo"] = "GestionElectronicHomo";
             }
 
-            if (!Application.Current.Properties.ContainsKey("Dias"))
+            if (!Application.Current.Properties.ContainsKey("Vendedor"))
             {
-                Application.Current.Properties["Dias"] = "15";
+                Application.Current.Properties["Vendedor"] = "1";
             }
 
         }

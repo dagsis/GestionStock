@@ -26,6 +26,11 @@
                 TextColor="{StaticResource FontColor}"
                 Placeholder="Ingrese Nombre del Catalogo">
             </Entry>
+            <Entry
+                x:Name="txtVendedor"
+                TextColor="{StaticResource FontColor}"
+                Placeholder="Código Vendedor">
+            </Entry>
             <Button
                 x:Name="btnGuardar"
                 Margin="0,20"

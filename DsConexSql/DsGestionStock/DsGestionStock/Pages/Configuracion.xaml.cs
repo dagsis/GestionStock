@@ -30,6 +30,10 @@ namespace DsGestionStock.Pages
                 txtCatalogo.Text = Application.Current.Properties["Catalogo"] as string;
             }
 
+            if (Application.Current.Properties.ContainsKey("Vendedor"))
+            {
+                txtVendedor.Text = Application.Current.Properties["Vendedor"] as string;
+            }
 
             btnGuardar.Clicked += BtnGuardar_Clicked;
         }
@@ -44,12 +48,13 @@ namespace DsGestionStock.Pages
 
             if (string.IsNullOrEmpty(txtCatalogo.Text))
             {
-                DisplayAlert("Atención", "Ingrese Nombre del Catalogo Sql", "Aceptar");
+                DisplayAlert("Atención", "Ingrese Base Sql Server", "Aceptar");
                 return;
             }
 
             Application.Current.Properties["Servidor"] = txtServidor.Text;
             Application.Current.Properties["Catalogo"] = txtCatalogo.Text;
+            Application.Current.Properties["Vendedor"] = txtVendedor.Text;
 
             DisplayAlert("Atención", "Datos Guardados Con Exito..", "Aceptar");
 
