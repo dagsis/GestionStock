@@ -38,7 +38,6 @@
     <AndroidEnableProfiledAot>false</AndroidEnableProfiledAot>
     <BundleAssemblies>false</BundleAssemblies>
     <MandroidI18n>West</MandroidI18n>
-    <AndroidPackageFormat>aab</AndroidPackageFormat>
     <AndroidUseAapt2>true</AndroidUseAapt2>
     <AndroidCreatePackagePerAbi>false</AndroidCreatePackagePerAbi>
   </PropertyGroup>
@@ -104,10 +103,6 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\DsConexSql\DsConexSql.csproj">
-      <Project>{3c324788-5346-45ba-abef-0c6a591a0d08}</Project>
-      <Name>DsConexSql</Name>
-    </ProjectReference>
     <ProjectReference Include="..\DsGestionStock\DsGestionStock.csproj">
       <Project>{4B46FC9B-4A0A-437B-92C9-0EEB67743439}</Project>
       <Name>DsGestionStock</Name>
