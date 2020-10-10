@@ -22,7 +22,6 @@ namespace DsGestionStock.Droid
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
-            LoadApplication(new App());
 
             MobileBarcodeScanner.Initialize(this.Application);
             LoadApplication(new App());
